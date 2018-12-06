@@ -14,7 +14,7 @@ import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
 import { FormsModule } from '../../node_modules/@angular/forms';
 
 const appRoutes: Routes = [
-  {path: 'Dashboard', component: DashboardComponent},
+  {path: 'Dashboard/:empId/:empMgrid', component: DashboardComponent},
   {path: '', component: EmployeesComponent}
 ] ;
 @NgModule({

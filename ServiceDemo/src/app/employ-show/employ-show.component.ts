@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from '../../../node_modules/rxjs';
 import { Employees } from '../employees';
 import { EmployeesService } from '../employees.service';
-import { Router} from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-employ-show',
@@ -12,8 +12,8 @@ import { Router} from '@angular/router';
 export class EmployShowComponent implements OnInit {
 employees: Observable<Employees>;
 empId : number;
-  constructor(private employeesService : EmployeesService) {
-    this.empId=parseInt(localStorage.getItem("empId"));
+  constructor(private employeesService : EmployeesService,private route : ActivatedRoute) {
+    this.empId=this.route.snapshot.params["empId"];;
     this.employees = employeesService.showEmploy(this.empId);
    }
 

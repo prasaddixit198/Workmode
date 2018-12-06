@@ -14,14 +14,17 @@ export class EmployeesComponent implements OnInit {
   constructor(private employeesService : EmployeesService, private router : Router) { 
     this.employees = employeesService.getEmployees();
   }
-  empMgrid: number;
+ // empMgrid: number;
   empId:number;
-Dashboard(empId, empMgrid) {
+Dashboard(empId,empMgrid) {
  this.empId=empId;
- localStorage.setItem("empId",empId);
- this.empMgrid=empMgrid;
- localStorage.setItem("empMgrid",empMgrid);
-  this.router.navigate(["/Dashboard"]);
+
+ //localStorage.setItem("empId",empId);
+// this.empMgrid=empMgrid;
+ //localStorage.setItem("empMgrid",empMgrid);
+  this.router.navigate(["/Dashboard",empId,empMgrid]);
+  
+
 }
   ngOnInit() {
   }
