@@ -1,0 +1,43 @@
+<p>
+  employees works!
+</p>
+<table border= "10">
+  <tr>
+    <th>ID</th>
+    <th>name</th>
+    <th>dept</th>
+    <th>emailid</th>
+    <th>mobile number</th>
+    <th>date of joining</th>
+    <th>balance</th>
+    <th>manager id</th>
+    <th>Show</th>
+  </tr>
+  <tr *ngFor= "let user of employees | async">
+    <td>
+      {{user.empId}}
+    </td>
+    <td>
+      {{user.empName}}
+    </td>
+    <td>
+      {{user.empDept}}
+    </td>
+    <td>
+      {{user.empEmail}}
+    </td>
+    <td>
+      {{user.empMob}}
+    </td>
+    <td>
+      {{user.empDoj}}
+    </td>
+    <td>
+      {{user.empLeavbal}}
+    </td>
+    <td>
+      {{user.empMgrid}}
+    </td>
+    <input type = "button" value="show" (click)= "Dashboard(user.empId,user.empMgrid)" />
+  </tr>
+</table>
